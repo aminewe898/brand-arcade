@@ -1,0 +1,18 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  # VITE_BRAND = "solmara"
+  # VITE_SITE_URL = "https://your-domain.example/"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/sfx/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
